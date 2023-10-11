@@ -2,7 +2,7 @@
 string name = Console.ReadLine();
 if (name.ToLower() == "маша")
 {
-    Console.WriteLine("Ура, это же Маша");  
+    Console.WriteLine("Ура, это же Маша");
 }
 else
 {
