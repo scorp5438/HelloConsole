@@ -8,4 +8,3 @@ else
 {
     Console.WriteLine("Привет, " + name);
 }
-
