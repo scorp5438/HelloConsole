@@ -71,8 +71,7 @@ double Average(int[] array, int count)
         sum += array[index];
         index++;
     }
-    
-    double result = sum / array.Length;
+    double result = sum / count;
     return result;
 }
 
@@ -89,6 +88,11 @@ for (int n = 0; n < array.Length; n++)
     Console.Write($"{array[n]} ");
 }
 
+// foreach(int n in array)
+// {
+//     Console.Write($"{array[n]} ");
+// }
+
 // Нахождение максимального значения массива, через встроенный название массива.Min() Метод Max, работает аналонично;
 Console.WriteLine($"\n\nМинимальное число массива: {array.Min()}");
 
@@ -96,4 +100,7 @@ int max = MaxNum(array, count);
 Console.WriteLine($"\nМаксимальное число масива: {max}");
 
 double avg = Average(array, count);
+
 Console.WriteLine($"\nСреднее арифметическое значений массива: {avg}");
+
+Console.WriteLine($"Среднее арифметическое значений массива: {array.Average()}");
