@@ -51,29 +51,38 @@
 // }
 
 // string result = WhoseMove("black", false);
-// Console.WriteLine(result);
+// // Console.WriteLine(result);
 
 
-// Wilson primes
+// // Wilson primes
 
-double p = 5;
+// double p = 5;
 
-double HZ(double p)
-{
-    double res = 1;
-    for(double z = 1; z <= p - 1; z ++)
-    {
-        res *= z;
-    }
-    return res;
-}
-double result = HZ(p);
+// double HZ(double p)
+// {
+//     double res = 1;
+//     for(double z = 1; z <= p - 1; z ++)
+//     {
+//         res *= z;
+//     }
+//     return res;
+// }
+// double result = HZ(p);
 
-if((result + 1) % (p * p) == 0)
-{
-    Console.WriteLine(true);
-}
-else
-{
-    Console.WriteLine(false);
-}
+// if((result + 1) % (p * p) == 0)
+// {
+//     Console.WriteLine(true);
+// }
+// else
+// {
+//     Console.WriteLine(false);
+// }
+
+int a = 798;
+
+int z = (int)Char.GetNumericValue(a.ToString()[1]);
+
+int r = int.Parse(a.ToString()[1].ToString());
+
+Console.WriteLine($"Тип данных переменной z равной {z}: {z.GetTypeCode()}");
+Console.WriteLine($"Тип данных переменной z равной {r}: {r.GetTypeCode()}");
