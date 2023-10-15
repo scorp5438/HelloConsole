@@ -80,7 +80,7 @@ SortArray(array);
 PrintArray(array);
 Console.WriteLine();
 
-Array.Sort(array); // Сортировка мессива, через встроенный метод Array.Sort(Название массива);
+Array.Sort(array); // Сортировка массива, через встроенный метод Array.Sort(Название массива);
 
 // Вывод массива через цикл for
 for (int n = 0; n < array.Length; n++)
