@@ -271,7 +271,7 @@
 // {
 //     Console.Write($"{numbers[i]} ");
 // }
-    
+
 // A Needle in the Haystack
 
 // string[] arr = {"hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"};
@@ -283,3 +283,59 @@
 // double res = array.Sum();
 
 // Console.WriteLine(array.Average());
+
+
+// Simple remove duplicates
+
+// int[] arr = {1, 5, 18, 6, 8, 9, 6, 5, 8, 7, 1, 172, 3, 2};
+
+
+// int[] temp = arr.Reverse().ToArray();
+// int[] temp2 = temp.Distinct().ToArray();
+// int[] res = temp2.Reverse().ToArray();
+// Console.WriteLine(res[0]);
+
+
+// Vowel Count
+
+// string str = "abracadabra";
+// int vowelCount = 0;
+// for(int i = 0; i < str.Length; i++)
+// {
+//     switch(str[i])
+//     {
+//         case 'a':
+//         case 'e':
+//         case 'i':
+//         case 'o':
+//         case 'u':
+//         vowelCount++;
+//         break;
+//     }
+// }
+
+
+// Disemvowel Trolls
+
+// string str = "What are you, a communist?";
+// int i = 0;
+// while(i < str.Length)
+// {
+//     switch(str.ToLower()[i])
+//     {
+//     case 'a':
+//     case 'e':
+//     case 'i':
+//     case 'o':
+//     case 'u':
+//         str = str.Replace(str[i], '0');
+//         i--;
+//         break;
+//     default:  
+//         break;
+//     }
+//     i++;
+// }
+// str = str.Replace("0", "");
+
+// Console.WriteLine(str);
