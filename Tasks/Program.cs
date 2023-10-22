@@ -339,3 +339,39 @@
 // str = str.Replace("0", "");
 
 // Console.WriteLine(str);
+
+
+// Square Every Digit
+
+// int n = 9119;
+
+// string str = n.ToString();
+// string temp = String.Empty;
+// for(int i = 0; i < str.Length; i++)
+// {
+//     temp = temp + Math.Pow((Convert.ToInt32(Convert.ToChar(str[i]).ToString())), 2).ToString();
+// }
+// int res = Convert.ToInt32(temp);
+// Console.WriteLine(res.GetTypeCode());
+
+
+// Highest and Lowest
+
+// string numbers = "8 3 -5 42 -1 0 0 -9 4 7 4 -4";
+// string[] str = numbers.Split(new char[] { ' ' });
+// string max = str[0];
+// string min = str[0];
+// for (int i = 0; i < str.Length; i++)
+// {
+//     if (Convert.ToInt32(str[i]) > Convert.ToInt32(max))
+//     {
+//         max = str[i];
+//     }
+//     else if (Convert.ToInt32(str[i]) < Convert.ToInt32(min))
+//     {
+//         min = str[i];
+//     }
+// }
+// string res = max + ' ' + min;
+
+// Console.WriteLine(res);
