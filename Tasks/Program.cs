@@ -375,3 +375,119 @@
 // string res = max + ' ' + min;
 
 // Console.WriteLine(res);
+
+
+//Descending Order
+
+// int num = 45;
+// // Console.WriteLine(num);
+// int[] array = new int[num.ToString().Length];
+// int i = 0;
+// while(num > 0)
+// {
+//     array[i] = num % 10;
+//     num /= 10;
+//     i++;
+// }
+// void SelectionSort2(int[] array)
+// {
+//     for (int i = 0; i <array.Length - 1; i++)
+//     {
+//         int maxPosition = i;
+
+//         for (int j = i + 1; j < array.Length; j++)
+//         {
+//             if(array[j] > array[maxPosition]) maxPosition = j;
+//         }
+//         int temporary = array[i];
+//         array[i] = array[maxPosition];
+//         array[maxPosition] = temporary;
+//     }
+// }
+
+// SelectionSort2(array);
+// string temp = String.Empty;
+// for(int j = 0; j < array.Length; j++)
+// {
+//     temp = temp + array[j].ToString();
+// }
+
+// Console.WriteLine(int.Parse(temp).GetTypeCode());
+
+
+// Get the Middle Character
+
+// string s = "middle";
+// string res = String.Empty;
+// if(s.Length % 2 == 0)
+// {
+//     Console.WriteLine("Четное");
+//     res = res + s[s.Length / 2 - 1] + s[(s.Length / 2)];
+// }
+// else
+// {
+//     Console.WriteLine("Нечетное");
+//     res = res + s[s.Length / 2];
+// }
+// Console.WriteLine(res);
+
+
+// Multiples of 3 or 5
+
+// int value = 200;
+// int i = 3;
+// int res= 0;
+// while(i < value)
+// {
+//     if(i % 3 == 0 && i % 5 == 0) 
+//     {
+//         res += i;
+//     }
+//     else if(i % 3 == 0 || i % 5 == 0)
+//     {
+//         res += i;
+//     }
+//     i++;
+// }
+// Console.WriteLine(res);
+
+
+// Mumbling
+
+// string s = "ZpglnRxqenU";
+// string str = s[0].ToString().ToUpper();
+// for (int i = 1; i < s.Length; i++)
+// {
+//     int count = i;
+//     string temp = "-" + s[i].ToString().ToUpper();
+//     while (count > 0)
+//     {
+//         temp += s[i].ToString().ToLower();
+//         count--;
+//     }
+//     str += temp;
+//     temp = "";
+// }
+// Console.WriteLine(str);
+
+
+//  List Filtering
+// int a = 5;
+
+// Console.WriteLine(a is String); // Определяет является ли стока числом выдает два значение true и числе, если строку можно перевести
+
+// var listOfItems = new List<object> {133,2,"aasf","1","123",123};
+
+
+// listOfItems.RemoveAll(x => x is String);
+
+// int[] expected = new int[listOfItems.Count()];
+
+// for (int i = 0; i < listOfItems.Count; i++)
+// {
+//     expected[i] = Convert.ToInt32(listOfItems[i]);
+// }
+
+// var res = expected.ToList();
+
+// Console.WriteLine(res[0].GetType());
