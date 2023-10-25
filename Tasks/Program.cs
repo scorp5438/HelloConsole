@@ -491,3 +491,16 @@
 // var res = expected.ToList();
 
 // Console.WriteLine(res[0].GetType());
+
+// Random rand = new Random();
+// Console.WriteLine("Printing 10 random floating point numbers");
+// for (int i = 0; i < 10; i++)
+//     Console.WriteLine("{0} -> {1}", i, rand.NextDouble());
+
+// *********************************************************************************************************
+
+// Random rnd = new Random();
+// double a = rnd.NextDouble() * ((2.5) - (1.1)) + (1.1);
+// Console.WriteLine(a);
+
+// *********************************************************************************************************
