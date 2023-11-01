@@ -594,3 +594,59 @@
 // Console.WriteLine(input.Count(x =>(x == 'x')) == input.Count(o =>(o == 'o')));
 
 
+// *********************************************************************************************************
+
+// Jaden Casing Strings
+
+// using System.Globalization;
+
+// var phrase = "How Can Mirrors Be Real If Our Eyes Aren't Real";
+// //получаем TextInfo для русского языка
+// var textInfo = new CultureInfo("en-EN").TextInfo;
+// //преобразуем текст
+// var capitalizedText = textInfo.ToTitleCase(textInfo.ToLower(phrase));
+// Console.WriteLine(capitalizedText);
+
+
+// *********************************************************************************************************
+
+// Shortest Word
+
+// string s = "bitcoin take over the world maybe who knows perhaps";
+// string[] arr = s.Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+// int min = 10;
+// foreach (string x in arr)
+// {
+//     if (x.Count() < min) min = x.Count();
+// }
+// Console.WriteLine(min);
+
+ 
+// *********************************************************************************************************
+
+ // Complementary DNA
+
+// string dna = "CATAGCTAGCTAGCTAGCTAATATAAAAGCTGCTCTAAATTTATATATATATATGCTCTCTTATGTCTATCTGTCTAAT";
+// string res = String.Empty;
+// foreach(char s in dna)
+// {
+//     switch(s)
+//     {
+//         case 'T':
+//             res += 'A';
+//             break;
+//         case 'A':
+//             res += 'T';
+//             break;
+//         case 'C':
+//             res += 'G';
+//             break;
+//         case 'G':
+//             res += 'C';
+//             break;
+//     }
+// }
+// System.Console.WriteLine(res);
+
+
+// *********************************************************************************************************
