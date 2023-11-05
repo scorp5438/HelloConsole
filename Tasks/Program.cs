@@ -674,3 +674,64 @@
 
 
 // *********************************************************************************************************
+
+// Sum of two lowest positive integers
+
+// int[] numbers = {5, 12, 19, 22, 8};
+
+// Array.Sort(numbers);
+
+// Console.WriteLine(numbers[0] + numbers[1]);
+
+
+// *********************************************************************************************************
+
+// Beginner Series #3 Sum of Numbers
+
+// int a = 0;
+// int b = -1;
+// int res = 0;
+// if (a == b) Console.WriteLine(a);
+// else if (a < b)
+// {
+//     while(a <= b)
+//     {
+//         res += a;
+//         a +=1;
+//     }
+// }
+// else
+// {
+//     while(b <= a)
+//     {
+//         res += b;
+//         b += 1;
+//     }
+// }
+// Console.WriteLine(res);
+
+
+// *********************************************************************************************************
+
+// Two to One
+
+// string s1 = "loopingisfunbutdangerous";
+// string s2 = "lessdangerousthancoding";
+// string all = s1 + s2;
+
+// all = String.Concat(all.OrderBy(ch => ch));
+// string res = String.Empty;
+// char[] temp = new char[all.Length];
+
+// for (int i = 0; i < all.Length; i++)
+// {
+//     temp[i] = all[i];
+// }
+// char[] arr = temp.Distinct().ToArray();
+
+// for (int i = 0; i < arr.Length; i++)
+// {
+//     res += arr[i];
+// }
+
+// Console.WriteLine(res);

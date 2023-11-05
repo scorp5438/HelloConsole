@@ -23,8 +23,8 @@ char [,] map =
 
 int userX = 6, userY = 6;
 char[] bag = new char[1];
-
-while(true)
+bool isOpen = true;
+while(isOpen)
 {   Console.SetCursorPosition(0, 20);
     Console.Write("Сумка: ");
     for (int i = 0; i < bag.Length; i++)
@@ -69,6 +69,9 @@ while(true)
             {
                 userY++;
             }
+            break;
+        case ConsoleKey.Escape:
+            isOpen = false;
             break;
     }
     if (map[userX, userY] == 'X')
