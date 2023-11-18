@@ -20,6 +20,26 @@ char[,] map =
     {'#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#', '#'}
 };
 
+char [,] oShape = 
+{   
+    {'#', '#'},
+    {'#', '#'},
+};
+
+char [,] iShape = 
+{
+    {'#'},
+    {'#'},
+    {'#'},
+    {'#'},
+};
+
+char [,] iShape2 = 
+{
+    {' ', ' ', ' ', ' '},
+    {'#', '#', '#', '#'},
+};
+
 char [,] lShape = 
 {
     {' ', ' ', ' '},
@@ -27,25 +47,25 @@ char [,] lShape =
     {'#', ' ', ' '},
 };
 
-char [,]lShapeV2 = 
+char [,] jShape = 
 {
-    {'#', '#', ' '},
-    {' ', '#', ' '},
-    {' ', '#', ' '}
-};
-
-char [,] lShapeV3 = 
-{
-    {' ', ' ', '#'},
-    {'#', '#', '#'},
     {' ', ' ', ' '},
+    {'#', '#', '#'},
+    {' ', ' ', '#'},
 };
 
-char [,]lShapeV4 = 
+char [,] zShape = 
 {
-    {' ', '#', ' '},
-    {' ', '#', ' '},
-    {' ', '#', '#'}
+    {' ', ' ', ' '},
+    {'#', '#', ' '},
+    {' ', '#', '#'},
+};
+
+char [,] sShape = 
+{
+    {' ', ' ', ' '},
+    {' ', '#', '#'},
+    {'#', '#', ' '},
 };
 
 char [,] tShape = 
@@ -55,112 +75,115 @@ char [,] tShape =
     {' ', '#', ' '},
 };
 
-char [,] iShape = 
-{
-    {' ', ' ', ' '},
-    {' ', '#', '#'},
-    {'#', '#', ' '},
-};
-
-// char [,] iShape = 
+// // int number = new Random().Next(1, 8);
+// switch (number)
 // {
-//     {' ', '#', ' ', ' '},
-//     {' ', '#', ' ', ' '},
-//     {' ', '#', ' ', ' '},
-//     {' ', '#', ' ', ' '},
-// };
-
-char [,] iShape2 = 
-{
-    {' ', ' ', ' ', ' '},
-    {'#', '#', '#', '#'},
-    {' ', ' ', ' ', ' '},
-    {' ', ' ', ' ', ' '},
-};
+//     case 1:
+//         Shape = oShape;
+//         break;
+//     case 2:
+//         Shape = iShape;
+//         break;
+//     case 3:
+//         Shape = lShape;
+//         break;
+//     case 4:
+//         Shape = jShape;
+//         break;
+//     case 5:
+//         Shape = zShape;
+//         break;
+//     case 6:
+//         Shape = sShape;
+//         break;
+//     case 7:
+//         Shape = tShape;
+//         break;
+// }
 
 bool isOpen = true;
 bool isGame = true;
 bool contact = true;
-int elemX = 1, elemY = 10;
-int number = 1;
+bool LeftTouch = true;
+bool RightTouch = true;
+
+int elemX = 0, elemY = 11;
+char[,] Shape = iShape2;
+int number = 2;
 
 Task task = Task.Run(() =>
+{
+    while (isOpen)
     {
-        while (isOpen)
+        while (isGame)
         {
-            while (isGame)
-            {
-                contact = true;
-                switch (number)
-                {
-                    case 1:
-                        while (contact)
-                        {
-                            Console.Clear();
-                            drowMap(map);
-                            drowElem(iShape, elemX, elemY);
-                            CheckTouch(map, iShape, elemX, elemY);
-                            // for (int i = 0; i < iShape.GetLength(1); i++)
-                            // {
-                            //     if (iShape[2, i] == '#')
-                            //     {
-                            //         if (map[elemX + 4, elemY + i] == '#')
-                            //         {
-                            //             contact = false;
-                            //         }
-                            //     }
-                            //     else if (iShape[1, i] == '#')
-                            //     {
-                            //         if (map[elemX + 3, elemY + i] == '#')
-                            //         {
-                            //             contact = false;
-                            //         }
-                            //     }
-                            //     else if (iShape[0, i] == '#')
-                            //     {
-                            //         if (map[elemX + 2, elemY + i] == '#')
-                            //         {
-                            //             contact = false;
-                            //         }
-                            //     }
-                            // }
-                            
-                            Console.SetCursorPosition(elemY, elemX);
-                            
-                            elemX++;
-                            Thread.Sleep(300);
-                            
-                        }
-                        DrowElemToDown(iShape, elemY, elemX);
+            // int number = new Random().Next(1, 8);
+            // switch (number)
+            // {
+            //     case 1:
+            //         Shape = oShape;
+            //         break;
+            //     case 2:
+            //         Shape = iShape;
+            //         break;
+            //     case 3:
+            //         Shape = lShape;
+            //         break;
+            //     case 4:
+            //         Shape = jShape;
+            //         break;
+            //     case 5:
+            //         Shape = zShape;
+            //         break;
+            //     case 6:
+            //         Shape = sShape;
+            //         break;
+            //     case 7:
+            //         Shape = tShape;
+            //         break;
+            // }
+            contact = true;
+            LeftTouch = true;
+            RightTouch = true;
+            // switch (number)
+            // {
+            //     case 1:
+                    while (contact)
+                    {
+                        if (number == 12) Shape = iShape2;
+                        if (number == 2) Shape = iShape;
+                        Console.Clear();
                         drowMap(map);
-                        // map[elemX - 1, elemY] = '#';
-                        // map[elemX - 1, elemY + 1] = '#';
-                        // map[elemX, elemY] = '#';
-                        // map[elemX, elemY + 1] = '#';
+                        drowElem(Shape, elemX, elemY);
+                        CheckTouchDown(map, Shape, elemX, elemY);
 
-                        elemX = 1;
-                        elemY = 10;
-                        for (int i = 1; i < map.GetLength(0); i++)
+                        Console.SetCursorPosition(elemY, elemX);
+
+                        elemX++;
+                        Thread.Sleep(500);
+                    }
+                    DrowElemToDown(Shape, elemY, elemX);
+                    drowMap(map);
+                    elemX = 0;
+                    elemY = 10;
+                    for (int i = 1; i < map.GetLength(0); i++)
+                    {
+                        if (map[1, i] == '#')
                         {
-                            if (map[1, i] == '#') isGame = false;
+                        isGame = false;
                         }
-                        int row = 10;
-                        while (row > 0)
-                        {
-                            check(map);
-                            row--;
-                        }
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        break;
-                    case 4:
-                        break;
-                }
-            }
+                    }
+                    int row = 10;
+                    while (row > 0)
+                    {
+                        check(map);
+                        row--;
+                    }
+                    break;
+            // }
         }
-    });
+    }
+});
 
 while (isOpen)
 {
@@ -168,25 +191,25 @@ while (isOpen)
     switch (charKey.Key)
     {
         case ConsoleKey.LeftArrow:
-            if (map[elemX, elemY - 1] != '#' || map[elemX + 2, elemY - 1] != '#')
+            CheckTouchLeft(map, Shape, elemX, elemY);
+            if (LeftTouch)
             {
                 elemY--;
+                RightTouch = true;
             }
             break;
         case ConsoleKey.RightArrow:
-            if (map[elemX, elemY + 3] != '#'  || map[elemX + 2, elemY + 3] != '#')
+            CheckTouchRight(map, Shape, elemX, elemY);
+            if (RightTouch)
             {
                 elemY++;
+                LeftTouch = true;
             }
             break;
-        // case ConsoleKey.Spacebar:
-        //     if (map[elemX, elemY + 3] != '#')
-        //     {   
-        //         number += 10;
-
-        // if (number > 31) number = 1;
-        //     }
-        //     break;
+        case ConsoleKey.Spacebar:
+            number += 10;
+            if (number > 12) number = 2;
+            break;
         case ConsoleKey.Escape:
             isOpen = false;
             break;
@@ -273,29 +296,75 @@ void DrowElemToDown(char[,] elem, int elemX, int elemY)
     }
 }
 
-void CheckTouch (char[,] map, char[,] element, int elemX, int elemY)
+void CheckTouchDown (char[,] map, char[,] element, int elemX, int elemY)
+{
+    for (int i = 0; i < element.GetLength(1); i++)
+    {
+        for (int j = element.GetLength(0) - 1; j > 0; j--)
+        {
+            if (element[j, i] == '#')
+            {
+                if (map[elemX + j + 2, elemY + i] == '#')
+                {
+                    contact = false;
+                }
+            }
+        }
+        // if (element[2, i] == '#')
+        // {
+        //     if (map[elemX + 4, elemY + i] == '#')
+        //     {
+        //         contact = false;
+        //     }
+        // }
+        // else if (element[1, i] == '#')
+        // {
+        //     if (map[elemX + 3, elemY + i] == '#')
+        //     {
+        //         contact = false;
+        //     }
+        // }
+        // else if (element[0, i] == '#')
+        // {
+        //     if (map[elemX + 2, elemY + i] == '#')
+        //     {
+        //         contact = false;
+        //     }
+        // }
+    }
+}
+
+void CheckTouchRight(char[,] map, char[,] element, int elemX, int elemY)
 {
     for (int i = 0; i < element.GetLength(0); i++)
     {
-        if (element[2, i] == '#')
+        for (int j = element.GetLength(1) - 1; j >= 0; j--)
         {
-            if (map[elemX + 4, elemY + i] == '#')
+            if (element[i, j] == '#')
             {
-                contact = false;
+                if (map[elemX + i, elemY + j + 1] == '#')
+                {
+                    RightTouch = false;
+                    LeftTouch = true;
+                }
             }
         }
-        else if (element[1, i] == '#')
+    }
+}
+
+void CheckTouchLeft (char[,] map, char[,] element, int elemX, int elemY)
+{
+    for (int i = 0; i < element.GetLength(1); i++)
+    {
+        for (int j = 0; j < element.GetLength(0); j++)
         {
-            if (map[elemX + 3, elemY + i] == '#')
+            if (element[j, i] == '#')
             {
-                contact = false;
-            }
-        }
-        else if (element[0, i] == '#')
-        {
-            if (map[elemX + 2, elemY + i] == '#')
-            {
-                contact = false;
+                if (map[elemX + j, elemY + (i - 1)] == '#')
+                {
+                    LeftTouch = false;
+                    RightTouch = true;
+                }
             }
         }
     }

@@ -1,47 +1,47 @@
-﻿// string [,] table = new string [2, 5];
+﻿// // string [,] table = new string [2, 5];
 
-// table[1, 2] = "Слово";
+// // table[1, 2] = "Слово";
 
-// for (int rows = 0; rows < 2; rows++)
-// {
-//     for (int columns = 0; columns < 5; columns++)
-//     {
-//         Console.WriteLine($"-{table[rows, columns]}-");
-//     }
-// }
+// // for (int rows = 0; rows < 2; rows++)
+// // {
+// //     for (int columns = 0; columns < 5; columns++)
+// //     {
+// //         Console.WriteLine($"-{table[rows, columns]}-");
+// //     }
+// // }
 
-// *************************************************************************************************
+// // *************************************************************************************************
 
-// void PrintArr(int[,] matr)
-// {
-//     for (int i = 0; i < matr.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < matr.GetLength(1); j++)
-//         {
-//             Console.Write($"{matr[i, j]} ");
-//         }
-//         Console.WriteLine();
-//     }
-// }
+// // void PrintArr(int[,] matr)
+// // {
+// //     for (int i = 0; i < matr.GetLength(0); i++)
+// //     {
+// //         for (int j = 0; j < matr.GetLength(1); j++)
+// //         {
+// //             Console.Write($"{matr[i, j]} ");
+// //         }
+// //         Console.WriteLine();
+// //     }
+// // }
 
-// void FillArray(int[,] matr)
-// {
-//     for (int i = 0; i < matr.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < matr.GetLength(1); j++)
-//         {
-//             matr[i, j] = new Random().Next(1, 10);
-//         }
-//     }
-// }
+// // void FillArray(int[,] matr)
+// // {
+// //     for (int i = 0; i < matr.GetLength(0); i++)
+// //     {
+// //         for (int j = 0; j < matr.GetLength(1); j++)
+// //         {
+// //             matr[i, j] = new Random().Next(1, 10);
+// //         }
+// //     }
+// // }
 
-// int[,] matrix = new int[3, 4];
-// PrintArr(matrix);
-// FillArray(matrix);
-// Console.WriteLine();
-// PrintArr(matrix);
+// // int[,] matrix = new int[3, 4];
+// // PrintArr(matrix);
+// // FillArray(matrix);
+// // Console.WriteLine();
+// // PrintArr(matrix);
 
-// *************************************************************************************************
+// // *************************************************************************************************
 
 // int[,] pic = new int[,]
 // {
@@ -132,26 +132,26 @@
 
 
 
-// *************************************************************************************************
+// // *************************************************************************************************
 
-// int Factorial (int n)
-// {
-//     if (n == 1) return 1;
-//     else return n * Factorial(n -1);
-// }
-// Console.WriteLine(Factorial(5));
+// // int Factorial (int n)
+// // {
+// //     if (n == 1) return 1;
+// //     else return n * Factorial(n -1);
+// // }
+// // Console.WriteLine(Factorial(5));
 
-// *************************************************************************************************
+// // *************************************************************************************************
 
-// int Fibonacci(int n)
-// {
-//     if (n == 1 || n == 2) return 1;
-//     else return Fibonacci(n - 1) + Fibonacci(n - 2);
-// }
+// // int Fibonacci(int n)
+// // {
+// //     if (n == 1 || n == 2) return 1;
+// //     else return Fibonacci(n - 1) + Fibonacci(n - 2);
+// // }
 
-// for(int i = 1; i < 50; i++)
-// {
-//     Console.WriteLine(Fibonacci(i));
-// }
+// // for(int i = 1; i < 50; i++)
+// // {
+// //     Console.WriteLine(Fibonacci(i));
+// // }
 
-// *************************************************************************************************
+// // *************************************************************************************************
