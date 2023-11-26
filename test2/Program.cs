@@ -46,12 +46,48 @@ char [,] lShape =
     {'#', '#', '#'},
     {'#', ' ', ' '},
 };
+char [,] lShape2 = 
+{
+    {'#', '#', ' '},
+    {' ', '#', ' '},
+    {' ', '#', ' '},
+};
+char [,] lShape3 = 
+{
+    {' ', ' ', '#'},
+    {'#', '#', '#'},
+    {' ', ' ', ' '},
+};
+char [,] lShape4 = 
+{
+    {' ', '#', ' '},
+    {' ', '#', ' '},
+    {' ', '#', '#'},
+};
 
 char [,] jShape = 
 {
     {' ', ' ', ' '},
     {'#', '#', '#'},
     {' ', ' ', '#'},
+};
+char [,] jShape2 = 
+{
+    {' ', '#', ' '},
+    {' ', '#', ' '},
+    {'#', '#', ' '},
+};
+char [,] jShape3 = 
+{
+    {'#', ' ', ' '},
+    {'#', '#', '#'},
+    {' ', ' ', ' '},
+};
+char [,] jShape4 = 
+{
+    {' ', '#', '#'},
+    {' ', '#', ' '},
+    {' ', '#', ' '},
 };
 
 char [,] zShape = 
@@ -60,12 +96,23 @@ char [,] zShape =
     {'#', '#', ' '},
     {' ', '#', '#'},
 };
-
+char [,] zShape2 = 
+{
+    {' ', '#', ' '},
+    {'#', '#', ' '},
+    {'#', ' ', ' '},
+};
 char [,] sShape = 
 {
     {' ', ' ', ' '},
     {' ', '#', '#'},
     {'#', '#', ' '},
+};
+char [,] sShape2 = 
+{
+    {' ', '#', ' '},
+    {' ', '#', '#'},
+    {' ', ' ', '#'},
 };
 
 char [,] tShape = 
@@ -74,119 +121,141 @@ char [,] tShape =
     {'#', '#', '#'},
     {' ', '#', ' '},
 };
+char [,] tShape2 = 
+{
+    {' ', '#', ' '},
+    {'#', '#', ' '},
+    {' ', '#', ' '},
+};
+char [,] tShape3 = 
+{
+    {' ', '#', ' '},
+    {'#', '#', '#'},
+    {' ', ' ', ' '},
+};
+char [,] tShape4 = 
+{
+    {' ', '#', ' '},
+    {' ', '#', '#'},
+    {' ', '#', ' '},
+};
 
-// // int number = new Random().Next(1, 8);
-// switch (number)
-// {
-//     case 1:
-//         Shape = oShape;
-//         break;
-//     case 2:
-//         Shape = iShape;
-//         break;
-//     case 3:
-//         Shape = lShape;
-//         break;
-//     case 4:
-//         Shape = jShape;
-//         break;
-//     case 5:
-//         Shape = zShape;
-//         break;
-//     case 6:
-//         Shape = sShape;
-//         break;
-//     case 7:
-//         Shape = tShape;
-//         break;
-// }
+
 
 bool isOpen = true;
 bool isGame = true;
 bool contact = true;
 bool LeftTouch = true;
 bool RightTouch = true;
-
+int score = 0; 
 int elemX = 0, elemY = 11;
 char[,] Shape = iShape2;
-int number = 2;
 
+int number = new Random().Next(1, 8);
+int nextNumber = new Random().Next(1, 8);
+int [] elems = new int[2];
+elems[0] = number;
+elems[1] = nextNumber;
 Task task = Task.Run(() =>
 {
     while (isOpen)
     {
         while (isGame)
         {
-            // int number = new Random().Next(1, 8);
-            // switch (number)
-            // {
-            //     case 1:
-            //         Shape = oShape;
-            //         break;
-            //     case 2:
-            //         Shape = iShape;
-            //         break;
-            //     case 3:
-            //         Shape = lShape;
-            //         break;
-            //     case 4:
-            //         Shape = jShape;
-            //         break;
-            //     case 5:
-            //         Shape = zShape;
-            //         break;
-            //     case 6:
-            //         Shape = sShape;
-            //         break;
-            //     case 7:
-            //         Shape = tShape;
-            //         break;
-            // }
             contact = true;
             LeftTouch = true;
             RightTouch = true;
-            // switch (number)
-            // {
-            //     case 1:
-                    while (contact)
-                    {
-                        if (number == 12) Shape = iShape2;
-                        if (number == 2) Shape = iShape;
-                        Console.Clear();
-                        drowMap(map);
-                        drowElem(Shape, elemX, elemY);
-                        CheckTouchDown(map, Shape, elemX, elemY);
 
-                        Console.SetCursorPosition(elemY, elemX);
-
-                        elemX++;
-                        Thread.Sleep(500);
-                    }
-                    DrowElemToDown(Shape, elemY, elemX);
-                    drowMap(map);
-                    elemX = 0;
-                    elemY = 10;
-                    for (int i = 1; i < map.GetLength(0); i++)
-                    {
-                        if (map[1, i] == '#')
-                        {
-                        isGame = false;
-                        }
-                    }
-                    int row = 10;
-                    while (row > 0)
-                    {
-                        check(map);
-                        row--;
-                    }
+            number = elems[0];
+            elems[0] = new Random().Next(1, 8);
+            elems[1] = new Random().Next(1, 8);
+            switch (number)
+            {
+                case 1:
+                    Shape = oShape;
                     break;
-            // }
+                case 2:
+                    Shape = iShape;
+                    break;
+                case 3:
+                    Shape = lShape;
+                    break;
+                case 4:
+                    Shape = jShape;
+                    break;
+                case 5:
+                    Shape = zShape;
+                    break;
+                case 6:
+                    Shape = sShape;
+                    break;
+                case 7:
+                    Shape = tShape;
+                    break;
+            }
+            while (contact)
+            {
+                if (number == 12) Shape = iShape2;
+                else if (number == 2) Shape = iShape;
+                else if (number == 13) Shape = lShape2;
+                else if (number == 23) Shape = lShape3;
+                else if (number == 33) Shape = lShape4;
+                else if (number == 3) Shape = lShape;
+                else if (number == 14) Shape = jShape2;
+                else if (number == 24) Shape = jShape3;
+                else if (number == 34) Shape = jShape4;
+                else if (number == 4) Shape = jShape;
+                else if (number == 15) Shape = zShape2;
+                else if (number == 5) Shape = zShape;
+                else if (number == 16) Shape = sShape2;
+                else if (number == 6) Shape = sShape;
+                else if (number == 17) Shape = tShape2;
+                else if (number == 27) Shape = tShape3;
+                else if (number == 37) Shape = tShape4;
+                else if (number == 7) Shape = tShape;
+                Console.Clear();
+                drowMap(map);
+                drowElem(Shape, elemX, elemY);
+                CheckTouchDown(map, Shape, elemX, elemY);
+
+                Console.SetCursorPosition(elemY, elemX);
+
+                elemX++;
+                Thread.Sleep(500);
+            }
+            DrowElemToDown(Shape, elemY, elemX);
+            drowMap(map);
+            elemX = 0;
+            elemY = 10;
+            for (int i = 1; i < map.GetLength(0); i++)
+            {
+                if (map[1, i] == '#')
+                {
+                    isGame = false;
+                }
+            }
+            int row = 10;
+            while (row > 0)
+            {
+                check(map);
+                row--;
+            }
+            break;
+
         }
     }
 });
 
 while (isOpen)
-{
+{   
+    Console.SetCursorPosition(30, 1);
+    Console.WriteLine($"Score: {score}");
+
+    Console.SetCursorPosition(30, 3);
+    Console.WriteLine($"Next elem:");
+    Console.SetCursorPosition(30, 5);
+    drowElem(Shape, 5, 30);
+
     ConsoleKeyInfo charKey = Console.ReadKey();
     switch (charKey.Key)
     {
@@ -207,8 +276,36 @@ while (isOpen)
             }
             break;
         case ConsoleKey.Spacebar:
-            number += 10;
-            if (number > 12) number = 2;
+            if (number % 10 == 2)
+            {
+                number += 10;
+                if (number == 22) number = 2;
+            }
+            if (number % 10 == 3)
+            {
+                number += 10;
+                if (number == 43) number = 3;
+            }
+            if (number % 10 == 4)
+            {
+                number += 10;
+                if (number == 44) number = 4;
+            }
+            if (number % 10 == 5)
+            {
+                number += 10;
+                if (number == 25) number = 5;
+            }
+            if (number % 10 == 6)
+            {
+                number += 10;
+                if (number == 26) number = 6;
+            }
+            if (number % 10 == 7)
+            {
+                number += 10;
+                if (number == 47) number = 7;
+            }
             break;
         case ConsoleKey.Escape:
             isOpen = false;
@@ -256,6 +353,7 @@ void check (char[,] arr)
                 count++;
                 if (count == map.GetLength(1)-2)
                 {
+                    score += 10;
                     row = i;
                 }
             }

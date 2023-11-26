@@ -155,3 +155,87 @@
 // // }
 
 // // *************************************************************************************************
+
+// int n = 1;
+
+// void FindWords (string alphbet, char []word, int length = 0)
+// {
+//     if (length == word.Length)
+//     {
+//         Console.WriteLine($"{n++} {new String(word)}"); return;
+//     }
+//     for (int i = 0; i < alphbet.Length; i++)
+//     {
+//         word[length] = alphbet[i];
+//         FindWords(alphbet, word, length + 1);
+//     }
+// }
+
+// FindWords("аисв", new char[4]);
+
+// // *************************************************************************************************
+
+// Метод сложение двух чисел а и б без оператора а + б
+
+// int sumNumbers(int a, int b)
+// {
+//     if(b == 0)
+//         return a;
+//     return sumNumbers(a + 1, b - 1);
+// }
+
+// Console.Clear();
+// Console.WriteLine("Введите 1-ое число:");
+// int a = Convert.ToInt32(Console.ReadLine()!);
+// Console.WriteLine("Введите 2-ое число:");
+// int b = Convert.ToInt32(Console.ReadLine()!);
+// Console.WriteLine($"{a} + {b} = {sumNumbers(a, b)}");
+
+// /*
+// sumNumbers = S
+// S(2, 3) -> S(3, 2) -> S(4, 1) -> S(5, 0) -> 5
+
+// */
+
+// Быстрая сотрировка 
+
+int[] quickSort(int[] array, int leftIndex, int rightIdex)
+{
+    int i = leftIndex, j = rightIdex, pivot = array[leftIndex];
+    while (i <= j)
+    {
+        while(array[i] < pivot)
+        {
+            i++;
+        }
+        while(array[j] > pivot)
+        {
+            j--;
+        }
+        if (i <= j)
+        {
+            int temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+            i++;
+            j--;
+        }
+    }
+    if(leftIndex < j)
+    {
+        quickSort(array, leftIndex, j);
+    }
+    if (i < rightIdex)
+    {
+        quickSort(array, i, rightIdex);
+    }
+    return array;
+}
+
+Console.Clear();
+int[] array = { 3, -10, 0, 2, -1, 9, 4, 5, 3 };
+Console.WriteLine($"Начальный массив: [{String.Join(", ", array)}]");
+Console.WriteLine($"Отсортированный массив: [{String.Join(", ", quickSort(array, 0, array.Length - 1))}]");
+Array.Sort(array);
+
+//***********************************************************************************************************
